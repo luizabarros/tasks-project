@@ -1,0 +1,54 @@
+:root {
+  --color-primary: #1976d2;
+  --color-primary-dark: #155a9c;
+  --color-light-bg: #f9fafb;
+  --color-card-bg: #fff;
+  --color-date: #6b7280;
+  --color-title: #ffffff;
+
+  --shadow-light: 0 4px 12px #0000001a;
+  --shadow-strong: 0 8px 24px #0000001a;
+
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --font-main: 'Roboto', sans-serif;
+
+  --spacing-sm: 0.7rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+
+  --gradient-bg: linear-gradient(to right, #243B55, #141E30);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  min-height: 100vh;
+  padding: var(--spacing-md);
+  background: var(--gradient-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-main);
+}
+
+.app-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-title);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  user-select: none;
+  text-shadow: 0 1px 2px #0000001a;
+}
+
+@media screen and (max-width: 700px) {
+  .app-container {
+    flex-direction: column;
+  }
+}

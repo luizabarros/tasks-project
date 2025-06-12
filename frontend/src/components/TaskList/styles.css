@@ -1,0 +1,33 @@
+.task-list-container {
+  max-width: 900px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.task-card {
+  background-color: var(--color-card-bg);
+  box-shadow: var(--shadow-light);
+  border-radius: var(--radius-lg);
+  transition: box-shadow 0.3s ease;
+}
+
+.task-card:hover {
+  transform: scale(1.02);
+  transition: 0.2s ease;
+}
+
+.task-author {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.task-date {
+  color: var(--color-date); 
+  margin-top: 1rem;
+  font-style: italic;
+}

@@ -1,26 +1,45 @@
 import { createContext, useContext, useState, useEffect } from 'react'
-import { Task } from '../types/task'
+import { Task, TaskList } from '../types/task'
 import { getTasks, createTask } from '../services/taskService'
+import { toast } from 'react-toastify'
 
 interface TaskContextType {
-  tasks: Task[]
+  tasks: TaskList[]
+  loading?: boolean
   fetchTasks: () => void
-  addTask: (task: Omit<Task, 'id'>) => void
+  addTask: (task: Omit<Task, 'id' | 'created_at'>) => void
 }
 
 const TaskContext = createContext<TaskContextType | undefined>(undefined)
 
 export const TaskProvider = ({ children }: { children: React.ReactNode }) => {
-  const [tasks, setTasks] = useState<Task[]>([])
+  const [tasks, setTasks] = useState<TaskList[]>([])
+  const [loading, setLoading] = useState<boolean>(false)
 
   const fetchTasks = async () => {
-    const data = await getTasks()
-    setTasks(data)
+    setLoading(true)
+    try {
+      const data = await getTasks()
+      setTasks(data.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()))
+    } catch (error) {
+      console.error('fetchTasks error:', error)
+    } finally {
+      setLoading(false)
+    }
   }
 
-  const addTask = async (task: Omit<Task, 'id'>) => {
-    await createTask(task)
-    fetchTasks()
+  const addTask = async (task: Omit<Task, 'id' | 'created_at'>) => {
+    setLoading(true)
+    try {
+      await createTask(task)
+      toast.success('Tarefa adicionada com sucesso!')
+      fetchTasks()
+    } catch (error) {
+      toast.error('Erro ao adicionar tarefa. Tente novamente.')
+      console.error('addTask error:', error)
+    } finally {
+      setLoading(false)
+    }
   }
 
   useEffect(() => {
@@ -28,7 +47,7 @@ export const TaskProvider = ({ children }: { children: React.ReactNode }) => {
   }, [])
 
   return (
-    <TaskContext.Provider value={{ tasks, fetchTasks, addTask }}>
+    <TaskContext.Provider value={{ tasks, loading, fetchTasks, addTask }}>
       {children}
     </TaskContext.Provider>
   )

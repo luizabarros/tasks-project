@@ -1,0 +1,36 @@
+.task-form {
+  max-width: 400px;
+  margin: var(--spacing-lg) auto;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--color-light-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-strong);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-family: var(--font-main);
+}
+
+.task-form .MuiFormControl-root {
+  width: 100%;
+}
+
+.task-form button {
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.task-form button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.task-form button:focus-visible {
+  outline: 3px solid #90caf9;
+  outline-offset: 2px;
+}

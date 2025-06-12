@@ -1,13 +1,14 @@
 import app from './app';
 import sequelize from './models';
+import './models/initModels';
 
 const PORT = process.env.PORT || 3000;
 
 const start = async () => {
   try {
-    await sequelize.sync({ force: false });
+    await sequelize.sync({ force: false }); 
     console.log('Banco sincronizado');
-    
+
     app.listen(PORT, () => {
       console.log(`Servidor rodando na porta ${PORT}`);
     });

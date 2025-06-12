@@ -58,7 +58,6 @@ Content-Type: application/json
   "user_name": "Ana Luiza",
   "title": "Comprar pão",
   "description": "Ir na padaria até as 18h",
-  "created_at": "2025-06-11"
 }
 
 Listar tarefas

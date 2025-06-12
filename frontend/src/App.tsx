@@ -1,14 +1,31 @@
 import { TaskProvider } from './contexts/TaskContext'
-import { TaskForm } from './components/TaskForm'
-import { TaskList } from './components/TaskList'
+import { TaskForm } from './components/TaskForm/TaskForm'
+import { TaskList } from './components/TaskList/TaskList'
+import './App.css'
 
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 export default function App() {
   return (
     <TaskProvider>
-      <div className="min-h-screen bg-gradient-to-b from-[#caf0f8] to-[#0077b6] p-6">
-        <h1 className="text-3xl font-bold text-center text-[#03045e] mb-6">Gerenciamento de Tarefas</h1>
-        <TaskForm />
+      <div className="app-container">
+        <div>
+          <h1 className="app-title">Gerenciamento de Tarefas</h1>
+          <TaskForm />
+        </div>
         <TaskList />
+        <ToastContainer 
+          position="top-right" 
+          autoClose={3000} 
+          hideProgressBar={false} 
+          newestOnTop={false} 
+          closeOnClick 
+          rtl={false} 
+          pauseOnFocusLoss 
+          draggable 
+          pauseOnHover 
+          theme="colored"
+        />
       </div>
     </TaskProvider>
   )
