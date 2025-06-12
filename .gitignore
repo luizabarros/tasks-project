@@ -1,0 +1,11 @@
+# Ignora todos os node_modules do projeto
+**/node_modules/
+
+# Ignora arquivos .env em qualquer pasta
+**/.env
+
+# Outros exemplos comuns
+dist/
+build/
+.env.*   # caso tenha .env.local, .env.dev, etc.
+.DS_Store
