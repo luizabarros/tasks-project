@@ -24,7 +24,7 @@ Este é um projeto backend construído com Node.js, Express, Sequelize e TypeScr
 
 - [Docker](https://www.docker.com/) e Docker Compose **OU**
 - Node.js (versão 18+) + PostgreSQL local
-
+- Entrar na pasta backend e frontend para fazer o npm install (instalar as dependências)
 ---
 
 ### 🐳 Usando Docker (recomendado)
