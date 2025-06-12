@@ -40,13 +40,6 @@ cd task-manager
 3. Suba a aplicação:  docker-compose up --build
 4. A API estará disponível em: http://localhost:3000
 
-### 💻 Rodando localmente (sem Docker)
-
-1. Instale as dependências: npm install
-2. Configure seu banco de dados PostgreSQL local e adicione as variáveis no .env.
-3. Rode as migrations e crie os modelos (Sequelize): npx sequelize-cli db:migrate
-4. Inicie a aplicação: npm run dev
-
 ### 📬 Endpoints
 
 Criar uma tarefa
