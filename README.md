@@ -16,7 +16,10 @@ Este é um projeto backend construído com Node.js, Express, Sequelize e TypeScr
 ## Modelagem do banco de dados 
 - A escolha de duas tabelas (users e tasks) ocorreu porque observei que, se eu colocasse o nome do usuário em tasks, isso geraria redundância na tabela.
 - A redundância poderia causar futuros problemas de desempenho, bem como afetaria a manutenção.
-![Badge do GitHub](https://file.notion.so/f/f/15583dc7-63ba-43c6-a5cd-a6f334af3e85/717f00b2-0934-4e2c-80c9-0643d7c50370/image.png?table=block&id=20ee7f5c-ac91-806a-b0ea-da59089110f0&spaceId=15583dc7-63ba-43c6-a5cd-a6f334af3e85&expirationTimestamp=1749772800000&signature=h-lLRHVMaGA37VTRLebREKSmsEi2UDYYrmjQXVC3py8&downloadName=image.png)
+![image](https://github.com/user-attachments/assets/d9a8995c-6cfe-401e-8f7f-3679f27eedeb)
+
+## Acessando pelo DBEAVER
+![image](https://github.com/user-attachments/assets/c8bd6f26-2af2-42c0-98c7-2bb798555c02)
 
 ## 🚀 Como rodar o projeto
 
@@ -24,7 +27,7 @@ Este é um projeto backend construído com Node.js, Express, Sequelize e TypeScr
 
 - [Docker](https://www.docker.com/) e Docker Compose **OU**
 - Node.js (versão 18+) + PostgreSQL local
-
+- Entrar na pasta backend e frontend para fazer o npm install (instalar as dependências)
 ---
 
 ### 🐳 Usando Docker (recomendado)
